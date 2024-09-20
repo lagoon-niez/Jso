@@ -1,0 +1,82 @@
+var UserEmail = 'lagoon.rocker@gmail.com';
+var UserPass = 'Thathu@123';
+var direct =false;
+var pos='0'; var Infant='0';
+
+//Lagoons 03/09/24
+var Ship= 'Lagoons';
+var Src = 'Kochi';
+var Dst = 'Kadmat';
+var Clss = 'Bunk';
+var Passno = '1';
+var Name1 = 'Sithara beegum';
+var Age1 = '22';
+var Gender1 = 'Female';
+var PassType1 = 'Islander';
+var Adhaar1 = '7822';
+var PermitNo1 = '';
+var Name2 = 'Azin';
+var Age2 = '2';
+var Gender2 = 'Male';
+var PassType2 = 'Islander';
+var Adhaar2 = '8860';
+var PermitNo2 = '';
+var timeout = setInterval(rfsClk2, 250); function rfsClk2() {if (document.getElementById('imTxt').value.length === 6) { document.getElementById('btnValidateaptcha').click();}}
+let chkur=window.location.href;
+if(chkur.includes("Test_LoginPage.aspx")){
+var timeout = setInterval(BtnClick, 100);
+function BtnClick() {
+var Sp = document.getElementById('ContentPlaceHolder1_ddlShip');
+for (var i = 0; i < Sp.options.length; i++) {if (Sp.options[i].text === Ship) {Sp.selectedIndex = i;break;}}
+var Sc = document.getElementById('ContentPlaceHolder1_cmbSource');
+for (var i = 0; i < Sc.options.length; i++) {if (Sc.options[i].text === Src) {Sc.selectedIndex = i;break;}}
+var Dt = document.getElementById('ContentPlaceHolder1_CmbDest');
+for (var i = 0; i < Dt.options.length; i++) {if (Dt.options[i].text === Dst) {Dt.selectedIndex = i;break;}}
+if(direct){document.getElementById("ContentPlaceHolder1_RbDirIndir_1").checked = true;}
+  var chk =document.getElementById('ContentPlaceHolder1_ctl0'+pos+'_seats_dgrid');table = document.getElementById("ContentPlaceHolder1_ctl0"+pos+"_seats_dgrid");
+tr = table.getElementsByTagName("tr");td3 = tr[1].getElementsByTagName("td")[0];var e = td3.innerText;var j=0, k=0;
+for (var i = 0; i < 8; i++) {td2 = tr[0].getElementsByTagName("td")[i];var tcchk2= td2.innerText;if (tcchk2 === "Stop") {break;}else{j++;}if(tcchk2 === Clss){k=j-1;}}
+td = tr[1].getElementsByTagName("td")[k];var tcchk= td.innerText;
+  if(chk != null){if(tcchk != 0){clearInterval(timeout);document.getElementById('ContentPlaceHolder1_ctl0'+pos+'_seats_dgrid_btnBookNow_0').click();}}document.getElementById('ContentPlaceHolder1_btn_view').click();
+ }
+}
+if(chkur.includes("Test_ship_Ticket_Public.aspx")){
+ var timeout = setInterval(BtnClick2, 10); document.getElementById('ContentPlaceHolder1_txt_MobileNumber').value= "8547880597";
+ document.getElementById('ContentPlaceHolder1_shippassengers_TextBox').value= Passno;
+ var cls = Clss; var cl= document.getElementById('ContentPlaceHolder1_shipclas_DropDownList');
+  for (var i = 0; i < cl.options.length; i++) {
+    if (cl.options[i].text === cls) {cl.selectedIndex = i; break;}
+  }__doPostBack('ContentPlaceHolder1_shipclas_DropDownList', '');
+
+  function BtnClick2() {
+if(document.getElementById('ContentPlaceHolder1_lblMsg').innerText.includes("after 1 hour of online release")){
+ if(document.getElementById('ContentPlaceHolder1_shiptsubmit_Button').value=="Next >>"){document.getElementById('ContentPlaceHolder1_shiptsubmit_Button').removeAttribute("disabled");}
+}var cls = Clss; var cl= document.getElementById('ContentPlaceHolder1_shipclas_DropDownList');
+for (var i = 0; i < cl.options.length; i++) {if (cl.options[i].text === cls) {cl.selectedIndex = i;break;}}
+    var a = document.getElementById("ContentPlaceHolder1_shipwaiting_RadioButtonList_1");
+    if(a){a.checked = false;document.getElementById("ContentPlaceHolder1_shipwaiting_RadioButtonList_0").checked = true;document.getElementById('ContentPlaceHolder1_shiptsubmit_Button').click();}
+  document.getElementById('ContentPlaceHolder1_shiptsubmit_Button').click();
+  }
+}
+if( chkur.includes("pg_req_test1.aspx")){
+  var timeout = setInterval(BtnClick3, 0);
+function setDetails(){
+document.querySelectorAll('input[type=text]')[0].value=Name1;document.querySelectorAll('input[type=text]')[1].value=Adhaar1;document.querySelectorAll('input[type=text]')[2].value=Age1;var cls = PassType1; var cl= document.getElementById('cat1');
+  for (var i = 0; i < cl.options.length; i++) {if (cl.options[i].text === cls) {cl.selectedIndex = i;break;}}
+var s = Gender1; var l= document.querySelectorAll('select')[0]; for (var i = 0; i < l.options.length; i++) {if (l.options[i].text === s) {l.selectedIndex = i;break;}}
+if(PassType1 == 'Permit'){document.querySelectorAll('input[type=text]')[3].value=PermitNo1;}
+if(Passno === '2'){
+  document.querySelectorAll('input[type=text]')[4].value=Name2; document.querySelectorAll('input[type=text]')[5].value=Adhaar2;document.querySelectorAll('input[type=text]')[6].value=Age2; var cls2 = PassType2; var cl2= document.getElementById('cat2');
+for (var i = 0; i < cl2.options.length; i++) {if (cl2.options[i].text === cls2) { cl2.selectedIndex = i;break;}}
+var s1 = Gender2; var l1= document.querySelectorAll('select')[2];
+for (var i = 0; i < l1.options.length; i++) {if (l1.options[i].text === s1) {l1.selectedIndex = i;break;}}
+document.querySelectorAll('input[type=text]')[5].value=Adhaar2; if(PassType2 == 'Permit'){document.querySelectorAll('input[type=text]')[7].value=PermitNo2;}}
+document.getElementById('shiptissue_Button').click();
+} function BtnClick3() {document.getElementById('shiptissue_Button').click();}
+  
+  setDetails();}
+if(chkur.includes("ship_Session.aspx") || chkur.includes("Home.aspx") ){ window.location.replace("https://lakport.utl.gov.in/ship_online_Userlogin.aspx");}
+if(chkur.includes("ship_online_Userlogin.aspx")){var x = document.getElementsByTagName('p')[0].innerHTML;if(x.includes("The")){window.location.reload();}document.getElementById('ContentPlaceHolder1_txtUsername1').value=UserEmail;document.getElementById('ContentPlaceHolder1_txtPassword1').value=UserPass;}
+if(chkur.includes("pg_request.aspx")){
+  document.getElementById('btPayment').click();
+}
